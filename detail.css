@@ -1,0 +1,256 @@
+html,
+body{
+    height: 100%;
+    margin:unset;
+    padding: unset;
+    font-family: 'Inter', sans-serif;;
+}
+html{
+    font-size: 62.5%;
+    width: 100%;
+}
+body{
+    position: relative;
+    box-sizing: border-box;
+    min-width: 78.1rem;
+    max-width: 78.1rem;
+    margin: 0 auto 0 auto;
+    transition: all 0.5s;
+}
+
+.mode-change{
+    position:fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.4rem;
+    z-index: 1;
+}
+.mode-change > img{
+    cursor: pointer;
+}
+
+
+.dark-mode{   
+    background-color: #1E1E1E;
+    color: white;
+}
+
+.a-dark-mode{   
+    color: white;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    transition: all 0.5s;
+}
+
+header{
+    position: relative;
+}
+
+header{
+    padding-top: 6.5rem;
+    padding-bottom: 6.5rem;
+    text-align: center;
+}
+header > img {
+    position: absolute;
+    top: 8.5rem;
+    left: 2rem;
+    width: 4.1rem;
+    height: 4.1rem;
+    cursor: pointer;
+}
+
+header > div {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 1.5rem 3rem;
+    border: 0.3rem solid #F06D6D;
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+
+main>.simple-contents>.image-frame{
+    width: fit-content;
+    margin-right: 6rem;
+}
+main>.simple-contents>.image-frame > img{
+    width: 23rem;
+    height: 23rem;
+    border-radius: 11.5rem;
+    object-fit: cover;
+}
+main>.simple-contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 7.5rem;
+}
+
+main>.simple-contents .table-head{
+    text-align: right;
+    font-weight: bold;
+}
+main>.simple-contents table{
+    border-spacing: 1.4rem;
+}
+
+main>.simple-contents a:hover{
+    text-decoration: underline;
+}
+
+.question-list {
+    display: flex;
+    flex-direction: column;
+}
+.question-list section + section{
+    margin-top: 3rem;
+}
+.question-list section{
+    width: 80%;
+}
+.question-list .question-title{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 2.5rem;
+    border-bottom: #F06D6D 0.3rem solid;
+}
+.question-list .question-contents{
+    font-size: 2rem;
+}
+
+.right{
+    text-align: right;
+    align-self: flex-end;
+}
+
+
+.guest-book{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.guest-book .guest-book-title{
+    width: 100%;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.7rem 0 ;
+    box-sizing: border-box;
+    border: #F06D6D 0.2rem solid;
+    border-radius: 1rem;
+    margin-top: 8.8rem;
+    margin-bottom: 3rem;
+}
+
+.guest-book .record-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+
+
+.guest-book .record-box .record-input{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.guest-book .record-btn-area{
+    width: 15%;
+}
+
+.record-box input {
+    font-size: 1.6rem;
+    width: 13rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+    padding-left: 1.4rem;
+}
+
+.record-box textarea {
+    font-size: 1.6rem;
+    resize: none;
+    height: 6rem;
+    box-sizing: border-box;
+    padding: 1.4rem;
+}
+
+.record-box .record-btn{
+    width: 100%;
+    height: 100%;
+    background-color: #F06D6D;
+    border-radius: 1rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.guest-book .guest-book-list{
+    margin: 3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.guest-book .guest-book-list .guest-comment{
+    margin-bottom: 0.6rem;
+    background-color: #f06d6d30;
+    box-sizing: border-box;
+    padding: 2rem;
+    padding-left: 6rem;
+    position: relative;
+    border-radius: 1rem;
+}
+
+.guest-book-list .guest-name{
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-bottom: 0.2rem white solid;
+    margin-bottom: 0.8rem;
+}
+
+.guest-book-list .comment{
+    font-size: 1.6rem;
+}
+
+.guest-book-list .comment-count{
+    position: absolute;
+    left: 2rem;
+    top: 40%;
+    bottom: 60%;
+    font-size: 2rem;
+}
+
+.guest-book-list .delete-btn{
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+}
+
+.guest-book-list .comment-date{
+    font-size: 1.2rem;
+    color: gray;
+}
+
+
+
+@media screen and (max-width:50rem) {
+    body{
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+    
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <section class="header-top">
+          <p>불<span class="header-name">4</span>조</p>
+          <div class="header-buttons">
+            <div class="header-imgs">
+              <img src="./img/light.png" />
+              <img src="./img/dark.png" />
+            </div>
+            <button class="header-login">Google Login</button>
+            <button class="check-dust">미세먼지 농도</button>
+          </div>
+        </section>
+  
+        <section class="header-btm"><h1>팀 소개 페이지</h1></section>
+  
+        <section class="name-dust">
+          <span>X</span>
+          <ul id="name-dust-bad"></ul>
+          <ul id="name-dust-pure"></ul>
+        </section>
+    </header>
+  
+      <!--버튼 위치 고민-->
+  <button id="dark-mode-btn">Dark Mode</button>
+  <div>
+      <h1>팀 소개</h2>
+  </div>
+<div style="margin-left:50px;" id="container">
+  <div id="team detail">
+    <h1 style="margin-left: 15px;">불4조</h1>
+    <h2>0. 팀명의 의미</h2>
+    <li>4조로 배정되었기도 하고, 불사조처럼 부트캠프 끝까지 죽지않고 불타오르며 달려나가기 위해 작명하였다</li>
+    <h2>1. 팀 구성원</h2>
+    <li>팀장 - 김명섭</li>
+    <li>팀원 : 서병택, 김진현, 천민규</li>
+    <h2>2. 팀의 궁극적 목표</h2>
+    <li>매니저님들이 봐도 감탄할만한 결과물 만들기</li>
+    <li>주니어 개발자가 되기 위한 첫 프로젝트 성공적으로 완성하기</li>
+    <h2>3. 팀에 대한 약속</h2>
+    <li>잠수 금지, 코드 리뷰 준비하기, 코드 주석 잘 달기, 상호 존중하기</li>
+    <h2>4. 팀의 특징</h2>
+    <li>각 지역 최강의 알파메일들이 모였다</li>
+    <li>서로를 존중해주며 어느 누구의 의견도 귀를 기울인다</li>
+    <li>체계적으로 역할 분담하고, 계획적으로 움직인다</li>
+    <h2>5. 팀원에 대한 설명</h2>
+    <li>전부 MZ세대이다</li>
+    <li>다들 술을 잘 마신다</li>
+    <li>축구를 좋아한다</li>
+  </div>
+  <div>
+  <img style="margin-left: 500px;" src="https://drive.google.com/uc?id=1T6oQ6r0q6YFpUKdwBQXi4q5c6pbt4OFQ" >
+</div>
+</div>
+<hr>
+
+<button id="posting-box-open-btn">열닫</button>
+    <div id="postingbox" class="postbox">
+      <form>
+        <div class="UPbox1">
+          <label for="images">사진:</label>
+          <input type="text" id="images" placeholder="image url" />
+          <label for="name">이름:</label>
+          <input type="text" id="name" placeholder="이름" />
+          <label for="living">거주지:</label>
+          <input type="text" id="living" placeholder="거주지" />
+        </div>
+        <div class="UPbox1">
+          MBTI: <input type="text" id="MBTI" placeholder="MBTI" /> 블로그:
+          <input type="text" id="blog" placeholder="블로그" /> 깃허브:
+          <input type="text" id="git" placeholder="깃허브" />
+        </div>
+        <div class="mid4">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >취업목표</label
+            >
+            <textarea
+              class="form-control"
+              id="goal"
+              rows="6"
+              placeholder="취업목표"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >첫 월급 받으면 하고 싶은 것</label
+            >
+            <textarea
+              class="form-control"
+              id="firstSalary"
+              rows="6"
+              placeholder="첫 월급 받으면 하고 싶은 것"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >객관적으로 살펴본 자신의 장점</label
+            >
+            <textarea
+              class="form-control"
+              id="Advantages"
+              rows="6"
+              placeholder="객관적으로 살펴본 자신의 장점"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label"
+              >자신의 협업 스타일 소개</label
+            >
+            <textarea
+              class="form-control"
+              id="collabo"
+              rows="6"
+              placeholder="자신의 협업 스타일 소개"
+            ></textarea>
+          </div>
+        </div>
+        <div class="endBtn">
+          <button type="button" class="btn btn-danger" id="posting-btn">
+            확인
+          </button>
+          <button type="reset" class="btn btn-danger" value="Reset">
+            닫기
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="mycards">
+      <div id="card" class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img
+              src="https://images.unsplash.com/photo-1446768500601-ac47e5ec3719?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1446&q=80"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-name">이름</h5>
+              <p class="card-living">거주지</p>
+              <p class="card-MBTI">MBTI</p>
+              <p class="card-goal">취업목표</p>
+              <p class="card-firstSalary">첫 월급 수령시 하고 싶은 것</p>
+              <p class="card-Advantages">자신만의 장점</p>
+              <p class="card-collabo">협력스타일</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-body-first">블로그</small>
+              <small class="text-body-secondary">깃허브</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+    <div class="card-area">
+        <div class="card-area-title">
+          <span>팀원</span>
+        </div>
+        <div class="card-list-container">
+          <div class="flip">
+            <div class="card">
+              <div class="front">
+                <img
+                  src="https://us.123rf.com/450wm/yupiramos/yupiramos1709/yupiramos170910394/85494169-%EC%B4%88%EC%83%81%ED%99%94-%EB%82%A8%EC%9E%90-%EB%AC%B8%EC%9E%90-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg"
+                />
+              </div>
+              <div class="back">
+                <div class="card-name">김명섭</div>
+                <div class="card-contents">"내용"</div>
+              </div>
+            </div>
+          </div>
+          <div class="flip">
+            <div class="card">
+              <div class="front">
+                <img
+                  src="https://us.123rf.com/450wm/yupiramos/yupiramos1709/yupiramos170910394/85494169-%EC%B4%88%EC%83%81%ED%99%94-%EB%82%A8%EC%9E%90-%EB%AC%B8%EC%9E%90-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg"
+                />
+              </div>
+              <div class="back">
+                <div class="card-name">김명섭</div>
+                <div class="card-contents">"내용"</div>
+              </div>
+            </div>
+          </div>
+          <div class="flip">
+            <div class="card">
+              <div class="front">
+                <img
+                  src="https://us.123rf.com/450wm/yupiramos/yupiramos1709/yupiramos170910394/85494169-%EC%B4%88%EC%83%81%ED%99%94-%EB%82%A8%EC%9E%90-%EB%AC%B8%EC%9E%90-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg"
+                />
+              </div>
+              <div class="back">
+                <div class="card-name">김명섭</div>
+                <div class="card-contents">"내용"</div>
+              </div>
+            </div>
+          </div>
+          <div class="flip">
+            <div class="card">
+              <div class="front">
+                <img
+                  src="https://us.123rf.com/450wm/yupiramos/yupiramos1709/yupiramos170910394/85494169-%EC%B4%88%EC%83%81%ED%99%94-%EB%82%A8%EC%9E%90-%EB%AC%B8%EC%9E%90-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%B2%A1%ED%84%B0-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg"
+                />
+              </div>
+              <div class="back">
+                <div class="card-name">김명섭</div>
+                <div class="card-contents">"내용"</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="./header.js" type="module"></script>
+    <script src="./body.js" type="module"></script>
+    <script src="./firebase.js" type="module"></script>
+    <script src="./posting.js" type="module"></script>
+</body>
+</html>
