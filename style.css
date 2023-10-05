@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&family=Single+Day&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&family=Single+Day&display=swap");
 
 /*header*/
 * {
@@ -7,16 +7,25 @@
   padding: 0;
 }
 
-body{
-  font-family: 'Single Day', sans-serif;
+body {
+  font-family: "Single Day", sans-serif;
 }
 
 .header-top {
+  position: fixed;
+  width: 100%;
+  top: 0;
   display: flex;
   justify-content: space-between;
   padding: 15px 40px;
-  gap: 20px;
   border-bottom: 1px solid black;
+  align-items: center;
+  border: none;
+  background-color: #ffffff;
+  z-index: 50;
+  box-shadow: -1px 4px 5px -3px rgba(180, 174, 174, 0.26);
+  -webkit-box-shadow: -1px 4px 5px -3px rgba(180, 174, 174, 0.26);
+  -moz-box-shadow: -1px 4px 5px -3px rgba(180, 174, 174, 0.26);
 }
 
 .header-name {
@@ -32,12 +41,22 @@ body{
 .header-buttons {
   display: flex;
   align-items: center;
+  flex: 1;
+  justify-content: flex-end;
+  font-size: 18px;
+}
+
+.header-login:hover,
+.check-dust:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 .header-imgs {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex: 1;
 }
 
 .header-imgs > img:first-of-type {
@@ -62,11 +81,14 @@ body{
   background-color: #ffff;
 }
 
-.header-btm {
+.header-title {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  font-size: 35px;
+  flex: 1;
+}
+.header-title > h1 {
+  margin: 0;
+  font-size: 55px;
 }
 
 .name-dust {
@@ -101,53 +123,83 @@ body{
   list-style: none;
 }
 
-
-
-
-/*main*/
-.dark-mode {
-  background-color: black;
-  color : white;
+.header-greeting {
+  padding-top: 120px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 20px 20px 0;
+  font-size: 20px;
 }
 
-#team {
-  border: 10px solid #f06d6d;
-  width: 262px;
+/*main*/
+
+ul {
+  list-style: none;
+}
+
+.team-intro {
+  border-bottom: 1px solid black;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+}
+
+.team-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.team-title > p {
+  padding: 5px 100px;
+  font-size: 30px;
+  margin: 0;
+  border: #f06d6d solid 5px;
+  box-shadow: 0 5px 8px 0px gray;
+}
+
+.content-container {
+  flex: 1;
+  margin-left: 50px;
+}
+.img-container {
+  flex: 1;
   text-align: center;
 }
 
-#team detail{
-  background-color: green;
+.dark-mode {
+  background-color: black;
+  color: white;
 }
 
 #container {
-  display : flex;
+  display: flex;
   flex-direction: row;
-  flex-wrap:nowrap;
-  justify-content: flex-start;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#paragraph{
-  margin-left : 5px;
+.profile {
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
 }
-
-img {
-  width : 800px;
-  height: 800px;
-  margin-left: 0px;
-}
-
-
-
 
 /*posting box*/
 /* 포스트박스 상단 토글 버튼 */
-.topBtn{
+.topBtn {
   display: flex;
   justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 1px solid black;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 .toggleButton {
-  margin: 12px auto ;
+  margin: 12px auto;
   padding: 9px 102px;
   border: #f06d6d solid 5px;
   font-size: 24px;
@@ -174,7 +226,7 @@ img {
   margin-bottom: 15px;
 }
 
-.UPbox1>input {
+.UPbox1 > input {
   width: 250px;
 }
 
@@ -182,7 +234,6 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
 }
 textarea {
   resize: none;
@@ -190,25 +241,21 @@ textarea {
 /* 포스팅박스 하단 버튼 */
 .endBtn {
   display: flex;
-  justify-content:end;
+  justify-content: end;
 }
 
-section > button:nth-of-type(2){
- margin-left: 2px;
+section > button:nth-of-type(2) {
+  margin-left: 2px;
 }
-section > button:nth-of-type(3){
- margin-left: 380px;
- width: 40px;
-
+section > button:nth-of-type(3) {
+  margin-left: 380px;
+  width: 40px;
 }
-
-
-
-
 
 /*card-container*/
 .card-area {
   width: 100%;
+  padding-bottom: 70px;
 }
 
 /* Member Card Title */

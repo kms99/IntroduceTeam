@@ -1,146 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
-
-</head>
-
-<body>
-  <header class="header">
-    <section class="header-top">
-      <p>불<span class="header-name">4</span>조</p>
-      <div class="header-buttons">
+  <body>
+    <!-- 헤더부분 -->
+    <header class="header">
+      <section class="header-top">
         <div class="header-imgs">
-          <img src="./img/light.png" />
-          <img src="./img/dark.png" />
+          <img src="./img/light.png" id="lightMode_btn" />
+          <img src="./img/dark.png" id="darkMode_btn" />
         </div>
-        <button class="header-login">Google Login</button>
-        <button class="check-dust">미세먼지 농도</button>
-      </div>
-    </section>
 
-    <section class="header-btm">
-      <h1>팀 소개 페이지</h1>
-    </section>
+        <div class="header-title">
+          <h1>팀 소개 페이지</h1>
+        </div>
 
-    <section class="name-dust">
-      <span>X</span>
-      <ul id="name-dust-bad"></ul>
-      <ul id="name-dust-pure"></ul>
-    </section>
-  </header>
+        <div class="header-buttons">
+          <button class="header-login">Google Login</button>
+          <button class="check-dust">미세먼지 농도</button>
+        </div>
+      </section>
 
-  <!--버튼 위치 고민-->
-  <button id="dark-mode-btn">Dark Mode</button>
-  <div>
-    <h1>팀 소개</h1>
-  </div>
-  <div style="margin-left:50px;" id="container">
-    <div id="team detail">
-      <h1 style="margin-left: 15px;">불4조</h1>
-      <h2>0. 팀명의 의미</h2>
-      <li>4조로 배정되었기도 하고, 불사조처럼 부트캠프 끝까지 죽지않고 불타오르며 달려나가기 위해 작명하였다</li>
-      <h2>1. 팀 구성원</h2>
-      <li>팀장 - 김명섭</li>
-      <li>팀원 : 시병택, 김진현, 천민규</li>
-      <h2>2. 팀의 궁극적 목표</h2>
-      <li>매니저님들이 봐도 감탄할만한 결과물 만들기</li>
-      <li>주니어 개발자가 되기 위한 첫 프로젝트 성공적으로 완성하기</li>
-      <h2>3. 팀에 대한 약속</h2>
-      <li>잠수 금지, 코드 리뷰 준비하기, 코드 주석 잘 달기, 상호 존중하기</li>
-      <h2>4. 팀의 특징</h2>
-      <li>각 지역 최강의 알파메일들이 모였다</li>
-      <li>서로를 존중해주며 어느 누구의 의견도 귀를 기울인다</li>
-      <li>체계적으로 역할 분담하고, 계획적으로 움직인다</li>
-      <h2>5. 팀원에 대한 설명</h2>
-      <li>전부 MZ세대이다</li>
-      <li>다들 술을 잘 마신다</li>
-      <li>축구를 좋아한다</li>
-    </div>
-    <div>
-      <img style="margin-left: 500px;" src="https://drive.google.com/uc?id=1T6oQ6r0q6YFpUKdwBQXi4q5c6pbt4OFQ">
-    </div>
-  </div>
-  <hr>
-  <div class="topBtn">
-    <button id="toggleButton" class="toggleButton">멤버 카드 만들기
-      <br> (click me)
-    </button>
-  </div>
-  <div class="hidden-content" id="hiddenContent">
-    <div id="postingbox" class="postbox">
-      <form>
-        <div class="UPbox1">
-          <label for="images">사진:</label>
-          <input type="file" id="images" placeholder="image url" />
-          <label for="name">이름:</label>
-          <input type="text" id="name" placeholder="이름" />
-          <label for="living">거주지:</label>
-          <input type="text" id="living" placeholder="거주지" />
-        </div>
-        <div class="UPbox1">
-          MBTI: <input type="text" id="MBTI" placeholder="MBTI" /> 블로그:
-          <input type="text" id="blog" placeholder="블로그" /> 깃허브:
-          <input type="text" id="git" placeholder="깃허브" />
-        </div>
-        <div class="mid4">
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">직무 턴 계기</label>
-            <textarea class="form-control" id="turn" rows="6" placeholder="직무 턴 계기"></textarea>
-            <label for="exampleFormControlTextarea1" class="form-label">취업목표</label>
-            <textarea class="form-control" id="goal" rows="6" placeholder="취업목표"></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">첫 월급 받으면 하고 싶은 것</label>
-            <textarea class="form-control" id="firstSalary" rows="6" placeholder="첫 월급 받으면 하고 싶은 것"></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">객관적으로 살펴본 자신의 장점</label>
-            <textarea class="form-control" id="Advantages" rows="6" placeholder="객관적으로 살펴본 자신의 장점"></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">자신의 협업 스타일 소개</label>
-            <textarea class="form-control" id="collabo" rows="6" placeholder="자신의 협업 스타일 소개"></textarea>
-          </div>
-        </div>
-        <section class="endBtn">
-          <button type="button" class="btn btn-outline-danger " id="posting-btn">
-            확인
-          </button>
-          <button type="button" class="btn btn-outline-danger closeButton" id="closeButton">
-            닫기
-          </button>
-          <button type="reset" class="btn btn-outline-danger" value="Reset">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
-              <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
-            </svg>
-          </button>
+      <section class="name-dust">
+        <span>X</span>
+        <ul id="name-dust-bad"></ul>
+        <ul id="name-dust-pure"></ul>
+      </section>
+
+      <div class="header-greeting"></div>
+    </header>
+    <!-- 헤더부분 -->
+
+    <!--소개부분-->
+    <article class="team-intro">
+      <div class="team-title"><p>팀 소개</p></div>
+      <div id="container">
+        <section class="content-container">
+          <ul>
+            <h1>'불4조'</h1>
+            <h2>1. 팀명의 의미</h2>
+            <li>
+              4조로 배정되었기도 하고, 불사조처럼 부트캠프 끝까지 죽지않고
+              불타오르며 달려나가기 위해 작명하였다
+            </li>
+          </ul>
+          <ul>
+            <h2>2. 팀 구성원</h2>
+            <li>팀장 - 김명섭 팀원 : 시병택, 김진현, 천민규</li>
+          </ul>
+
+          <ul>
+            <h2>3. 팀의 궁극적 목표</h2>
+            <li>1. 매니저님들이 봐도 감탄할만한 결과물 만들기</li>
+            <li>
+              2. 주니어 개발자가 되기 위한 첫 프로젝트 성공적으로 완성하기
+            </li>
+          </ul>
+
+          <ul>
+            <h2>4. 팀에 대한 약속</h2>
+            <li>
+              잠수 금지, 코드 리뷰 준비하기, 코드 주석 잘 달기, 상호 존중하기
+            </li>
+          </ul>
+
+          <ul>
+            <h2>5. 팀의 특징</h2>
+            <li>1. 각 지역 최강의 알파메일들이 모였다<br /></li>
+            <li>2. 서로를 존중해주며 어느 누구의 의견도 귀를 기울인다</li>
+            <li>3. 체계적으로 역할 분담하고, 계획적으로 움직인다</li>
+          </ul>
+
+          <ul>
+            <h2>6. 팀원에 대한 설명</h2>
+            <li>1. 전부 MZ세대이다</li>
+            <li>2. 다들 술을 잘 마신다</li>
+            <li>3. 축구를 좋아한다</li>
+          </ul>
         </section>
-      </form>
+        <section class="img-container">
+          <img
+            class="profile"
+            src="https://drive.google.com/uc?id=1T6oQ6r0q6YFpUKdwBQXi4q5c6pbt4OFQ"
+          />
+        </section>
+      </div>
+    </article>
+    <!--소개부분-->
+
+    <!-- 카드만들기 -->
+    <div class="topBtn">
+      <button id="toggleButton" class="toggleButton">
+        멤버 카드 만들기 <br />
+        (click me)
+      </button>
+
+      <div class="hidden-content" id="hiddenContent">
+        <div id="postingbox" class="postbox">
+          <form>
+            <div class="UPbox1">
+              <label for="images">사진:</label>
+              <input type="file" id="images" placeholder="image url" />
+              <label for="name">이름:</label>
+              <input type="text" id="name" placeholder="이름" />
+              <label for="living">거주지:</label>
+              <input type="text" id="living" placeholder="거주지" />
+            </div>
+            <div class="UPbox1">
+              MBTI: <input type="text" id="MBTI" placeholder="MBTI" /> 블로그:
+              <input type="text" id="blog" placeholder="블로그" /> 깃허브:
+              <input type="text" id="git" placeholder="깃허브" />
+            </div>
+            <div class="mid4">
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >직무 턴 계기</label
+                >
+                <textarea
+                  class="form-control"
+                  id="turn"
+                  rows="6"
+                  placeholder="직무 턴 계기"
+                ></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >취업목표</label
+                >
+                <textarea
+                  class="form-control"
+                  id="goal"
+                  rows="6"
+                  placeholder="취업목표"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >첫 월급 받으면 하고 싶은 것</label
+                >
+                <textarea
+                  class="form-control"
+                  id="firstSalary"
+                  rows="6"
+                  placeholder="첫 월급 받으면 하고 싶은 것"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >객관적으로 살펴본 자신의 장점</label
+                >
+                <textarea
+                  class="form-control"
+                  id="Advantages"
+                  rows="6"
+                  placeholder="객관적으로 살펴본 자신의 장점"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"
+                  >자신의 협업 스타일 소개</label
+                >
+                <textarea
+                  class="form-control"
+                  id="collabo"
+                  rows="6"
+                  placeholder="자신의 협업 스타일 소개"
+                ></textarea>
+              </div>
+            </div>
+            <section class="endBtn">
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                id="posting-btn"
+              >
+                확인
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-danger closeButton"
+                id="closeButton"
+              >
+                닫기
+              </button>
+              <button type="reset" class="btn btn-outline-danger" value="Reset">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-arrow-clockwise"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+                  />
+                  <path
+                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+                  />
+                </svg>
+              </button>
+            </section>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-  
+    <!-- 카드만들기 -->
 
-  <div class="card-area">
-    <div class="card-area-title">
-      <span>팀원</span>
+    <div class="card-area">
+      <div class="card-area-title">
+        <span>팀원</span>
+      </div>
+      <div id="card" class="card-list-container"></div>
     </div>
-    <div id="card" class="card-list-container"></div>
-  </div>
 
-
-  <script src="./header.js" type="module"></script>
-  <script src="./body.js" type="module"></script>
-  <script src="./firebase.js" type="module"></script>
-  <script src="./posting.js" type="module"></script>
-</body>
-
+    <script src="./header.js" type="module"></script>
+    <script src="./body.js" type="module"></script>
+    <script src="./firebase.js" type="module"></script>
+    <script src="./posting.js" type="module"></script>
+  </body>
 </html>

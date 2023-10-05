@@ -1,11 +1,14 @@
 "use strict";
-import { googleLogin, logOut } from "./firebase.js";
+import { getUser, googleLogin, logOut } from "./firebase.js";
 
 //HTML DOM들 변수에 저장
 const checkDustDom = document.querySelector(".check-dust");
 const nameDustSpanDom = document.querySelector(".name-dust span");
 const nameDustDom = document.querySelector(".name-dust");
 const loginDom = document.querySelector(".header-login");
+const greetingDom = document.querySelector(".header-greeting");
+let user = null;
+let userLogin = false;
 
 //header 상단 미세먼지 농도 데이터 불러와서 동적으로 HTML작성
 function addWeather() {
@@ -34,6 +37,17 @@ function addWeather() {
 
 addWeather();
 
+//로그인 유무에 따른 안내인사
+function handleGreeting() {
+  if (userLogin) {
+    let html = `${user.displayName}님 반가워요!`;
+    greetingDom.innerText = html;
+  }
+  if (!userLogin) {
+    greetingDom.innerText = "";
+  }
+}
+
 //visible 상태에 따라 모달창 toggle
 let visible = false;
 const handleDust = () => {
@@ -43,30 +57,44 @@ const handleDust = () => {
 };
 
 //구글 로그인 시 user변수에 유저 정보 담기
-let user = null;
-
 const handleLogin = async (e) => {
-  console.log(e.target.innerText);
   e.preventDefault();
-  e.stopPropagation();
 
   if (e.target.innerText === "Google Login") {
     //구글로그인
     try {
       await googleLogin().then((result) => (user = result));
-      console.log(user);
-      if (user.displayName) loginDom.innerText = "로그아웃";
+      if (user.displayName) {
+        userLogin = true;
+        loginDom.innerText = "로그아웃";
+        handleGreeting();
+      }
     } catch (err) {
       console.log("로그인 에러발생", err);
     }
   } else if (e.target.innerText === "로그아웃") {
-    try {
-      await logOut();
-      user = null;
-      loginDom.innerText = "Google Login";
-    } catch (err) {
-      console.log("로그아웃 에러발생", err);
+    const ok = confirm("로그아웃 하시겠습니까?");
+    if (ok) {
+      try {
+        await logOut();
+        user = null;
+        userLogin = false;
+        loginDom.innerText = "Google Login";
+        handleGreeting();
+      } catch (err) {
+        console.log("로그아웃 에러발생", err);
+      }
     }
+  }
+};
+
+const getUserProfile = async () => {
+  const result = await getUser();
+  user = result;
+  if (result.displayName) {
+    userLogin = true;
+    loginDom.innerText = "로그아웃";
+    handleGreeting();
   }
 };
 
@@ -74,3 +102,4 @@ const handleLogin = async (e) => {
 checkDustDom.addEventListener("click", handleDust);
 nameDustSpanDom.addEventListener("click", handleDust);
 loginDom.addEventListener("click", handleLogin);
+document.addEventListener("DOMContentLoaded", getUserProfile);

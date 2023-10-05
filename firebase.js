@@ -1,7 +1,13 @@
 // Firebase SDK 라이브러리 가져오기
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/10.3.1/firebase-auth.js";
 
 // Firebase 구성 정보 설정
 const firebaseConfig = {
@@ -36,4 +42,18 @@ export function logOut() {
     .catch((error) => {
       console.error(error);
     });
+}
+
+export function getUser() {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+        unsubscribe();
+        resolve(user);
+      } else {
+        resolve(null);
+      }
+    });
+  });
 }
