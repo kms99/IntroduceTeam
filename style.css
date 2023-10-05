@@ -137,8 +137,27 @@ img {
   margin-left: 0px;
 }
 
-/*posting box*/
 
+
+
+/*posting box*/
+/* 포스트박스 상단 토글 버튼 */
+.topBtn{
+  display: flex;
+  justify-content: center;
+}
+.toggleButton {
+  margin: 12px auto ;
+  padding: 9px 102px;
+  border: #f06d6d solid 5px;
+  font-size: 24px;
+  box-shadow: 0 5px 8px 0px gray;
+}
+/* 포스팅박스 부분 */
+.hidden-content {
+  display: none;
+  margin-top: 20px;
+}
 .postbox {
   width: 1000px;
   height: 1300px;
@@ -152,28 +171,38 @@ img {
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+  margin-bottom: 15px;
 }
 
-.box1>input {
+.UPbox1>input {
   width: 250px;
 }
 
 .mid4 {
-  height: 1000px;
-  border: 1px solild red l;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
 
+}
+textarea {
+  resize: none;
+}
+/* 포스팅박스 하단 버튼 */
 .endBtn {
   display: flex;
-  justify-content: center;
+  justify-content:end;
 }
 
-.btn {
-  margin-right: 3px;
+section > button:nth-of-type(2){
+ margin-left: 2px;
 }
+section > button:nth-of-type(3){
+ margin-left: 380px;
+ width: 40px;
+
+}
+
+
 
 
 
@@ -186,6 +215,7 @@ img {
 .card-area > .card-area-title {
   display: flex;
   margin-bottom: 110px;
+  margin-top: 15px;
   justify-content: center;
 }
 
