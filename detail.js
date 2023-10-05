@@ -44,7 +44,7 @@ if (docSnap.exists()) {
     imagePath,
     living,
     name,
-    reason,
+    turn,
   } = memberData;
 
   document.getElementById("member-image").src = imagePath;
@@ -59,7 +59,7 @@ if (docSnap.exists()) {
   document.getElementById("question-collabo").innerHTML = collabo;
   document.getElementById("question-firstSalary").innerHTML = firstSalary;
   document.getElementById("question-Advantages").innerHTML = Advantages;
-  document.getElementById("question-reason").innerHTML = reason;
+  document.getElementById("question-reason").innerHTML = turn;
 }
 
 //홈버튼
