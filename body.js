@@ -1,13 +1,14 @@
-function darkMode(){
-    var body = document.body;
-    body.classList.toggle("dark-mode");
+document.getElementById("lightMode_btn").addEventListener('click',function(){
+  document.getElementById("darkMode_btn").src="./img/dark.png";
+  document.getElementById("lightMode_btn").src="./img/light.png";
+  document.querySelector("body").style.background="white";
+  document.querySelector("body").style.color="black";
+})
 
-    var button = document.getElementById("button");
-    if(button.innerHTML =="Dark Mode") {
-      button.innerHTML = "Light Mode";
-    } else {
-      button.innerHTML = "Dark Mode"
-    }
-  }
+document.getElementById("darkMode_btn").addEventListener('click',function(){
+  document.getElementById("darkMode_btn").src="./img/dark(dark).png";
+  document.getElementById("lightMode_btn").src="./img/light(dark).png";
+  document.querySelector("body").style.background="black";
+  document.querySelector("body").style.color="white";
+})
 
-  document.getElementById('dark-mode-btn').addEventListener('click',darkMode);
