@@ -24,15 +24,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//페이지 쿼리스트링 값 가져오기
+let queryString = window.location.search.substring(1);
+console.log(queryString);
 
-// 페이지 이동시 아이디 값 가져오기
-const id = JSON.parse(localStorage.getItem("member-id"));
-console.log(id); // 아이디 이름 비밀번호
-
-// 아이디 값으로 파이어스토어 데이터 가져오기
-const docRef = doc(db, "member-cards", id);
+// 쿼리스트링 값으로 파이어스토어 데이터 가져오기
+const docRef = doc(db, "member-cards", `${queryString}`);
 const docSnap = await getDoc(docRef);
-const userName = docSnap.data()['name'];
 if (docSnap.exists()) {
   const memberData = docSnap.data();
   const {
@@ -43,39 +41,37 @@ if (docSnap.exists()) {
     firstSalary,
     git,
     goal,
-    images,
+    imagePath,
     living,
     name,
+    reason,
   } = memberData;
 
-  document.getElementById("member-image").src = images;
+  document.getElementById("member-image").src = imagePath;
   document.getElementById("member-name").innerHTML = name;
   document.getElementById("member-region").innerHTML = living;
   document.getElementById("member-mbti").innerHTML = MBTI;
   document.getElementById("member-blog").href = blog;
-  document.getElementById("member-blog").innerHTML = blog;
+  document.getElementById("member-blog").innerHTML = "이동";
   document.getElementById("member-github").href = git;
-  document.getElementById("member-github").innerHTML = git;
-  document.getElementById('question-goal').innerHTML = goal;
-  document.getElementById('question-collabo').innerHTML = collabo;
-  document.getElementById('question-firstSalary').innerHTML = firstSalary;
-  document.getElementById('question-Advantages').innerHTML = Advantages;
+  document.getElementById("member-github").innerHTML = "이동";
+  document.getElementById("question-goal").innerHTML = goal;
+  document.getElementById("question-collabo").innerHTML = collabo;
+  document.getElementById("question-firstSalary").innerHTML = firstSalary;
+  document.getElementById("question-Advantages").innerHTML = Advantages;
+  document.getElementById("question-reason").innerHTML = reason;
 }
 
 //홈버튼
 document.getElementById("home-btn").addEventListener("click", function () {
   window.localStorage.clear();
-  window.location.href = './index.html';
+  window.location.href = "./index.html";
 });
-
-
-
-
 
 // 데이터베이스 데이터 저장
 async function connectDatabase(user, comment, currentDate) {
   try {
-    await addDoc(collection(db, `${userName}-guest-book`), {
+    await addDoc(collection(db, `${queryString}-guest-book`), {
       user: user,
       comment: comment,
       currentDate: currentDate,
@@ -88,14 +84,17 @@ async function connectDatabase(user, comment, currentDate) {
 
 // 데이터베이스 삭제
 async function deleteDatabase(docId) {
-  await deleteDoc(doc(db,  `${userName}-guest-book`, docId));
+  await deleteDoc(doc(db, `${userName}-guest-book`, docId));
   await window.location.reload();
 }
 
 // 로딩 시 데이터 불러오기
 let innerHtml = "";
 let count = 1;
-const q = query(collection(db,  `${userName}-guest-book`), orderBy("currentDate", "asc"));
+const q = query(
+  collection(db, `${queryString}-guest-book`),
+  orderBy("currentDate", "asc")
+);
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   const { user, comment, currentDate } = doc.data();
