@@ -56,7 +56,7 @@ if (docSnap.exists()) {
       let url = "./img/blog/velog.jpeg";
       return url;
     } else if (blog.includes("naver")) {
-      let url = "naverblog.jpeg";
+      let url = "./img/blog/naverblog.jpeg";
       return url;
     }
   }
