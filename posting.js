@@ -41,6 +41,19 @@ const storage = getStorage(app);
 const storageRef = ref(storage);
 const imagesRef = ref(storageRef, "images");
 
+
+
+let reset = document.getElementById('reset')
+
+reset.addEventListener('click', function(event) {
+  let Confirmed = confirm('초기화하시겠습니까?');
+
+  if (Confirmed){
+    document.getElementByI('reset');
+} else {
+    event.preventDefault();
+  }});
+  
 // 파이어스토어 데이터추가
 $("#posting-btn").click(async function () {
   let name = $("#name").val();

@@ -285,6 +285,7 @@ section > button:nth-of-type(3) {
   perspective: 1100px;
   margin: 0 auto 0 auto;
   cursor: pointer;
+  margin-bottom: 25px;
 }
 
 .card {
