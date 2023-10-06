@@ -11,9 +11,9 @@ let user = null;
 let userLogin = false;
 
 //header 상단 미세먼지 농도 데이터 불러와서 동적으로 HTML작성
-function addWeather() {
+async function addWeather() {
   let url = "http://spartacodingclub.shop/sparta_api/seoulair";
-  fetch(url)
+  await fetch(url)
     .then((res) => res.json())
     .then((data) => {
       let rows = data.RealtimeCityAir.row;
