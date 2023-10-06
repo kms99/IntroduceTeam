@@ -9,6 +9,7 @@ import {
   doc,
   getDoc,
   deleteDoc,
+  updateDoc,
 } from "https://www.gstatic.com/firebasejs/10.3.1/firebase-firestore.js";
 
 // firebase config
@@ -47,14 +48,27 @@ if (docSnap.exists()) {
     turn,
   } = memberData;
 
+  function blogIcon() {
+    if (blog.includes("tistory")) {
+      let url = "./img/blog/tistory 로고.jpeg";
+      return url;
+    } else if (blog.includes("velog")) {
+      let url = "./img/blog/velog.jpeg";
+      return url;
+    } else if (blog.includes("naver")) {
+      let url = "naverblog.jpeg";
+      return url;
+    }
+  }
+
   document.getElementById("member-image").src = imagePath;
   document.getElementById("member-name").innerHTML = name;
   document.getElementById("member-region").innerHTML = living;
   document.getElementById("member-mbti").innerHTML = MBTI;
   document.getElementById("member-blog").href = blog;
-  document.getElementById("member-blog").innerHTML = "이동";
+  document.getElementById("blog-img").src = blogIcon();
   document.getElementById("member-github").href = git;
-  document.getElementById("member-github").innerHTML = "이동";
+  document.getElementById("github-img").src = "./img/github.jpeg";
   document.getElementById("question-goal").innerHTML = goal;
   document.getElementById("question-collabo").innerHTML = collabo;
   document.getElementById("question-firstSalary").innerHTML = firstSalary;
@@ -84,11 +98,11 @@ async function connectDatabase(user, comment, currentDate) {
 
 // 데이터베이스 삭제
 async function deleteDatabase(docId) {
-  await deleteDoc(doc(db, `${userName}-guest-book`, docId));
+  await deleteDoc(doc(db, `${queryString}-guest-book`, docId));
   await window.location.reload();
 }
 
-// 로딩 시 데이터 불러오기
+// 로딩 시 댓글 데이터 불러오기
 let innerHtml = "";
 let count = 1;
 const q = query(
@@ -99,6 +113,7 @@ const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
   const { user, comment, currentDate } = doc.data();
   innerHtml += `<div class="guest-comment">
+  <img src="./icon/edit.svg" class="edit-btn" data-code-id="${doc.id}">
     <img src="./icon/octicon_x-12.svg" class="delete-btn" data-code-id="${
       doc.id
     }">
@@ -151,6 +166,76 @@ document.querySelectorAll(".delete-btn").forEach((item) => {
     }
   });
 });
+
+//댓글 수정 이벤트
+//수정버튼 클릭했을때 수정가능한 textarea와 수정확인 버튼나옴
+const editDOM = document.querySelectorAll(".edit-btn");
+editDOM.forEach((item) => {
+  item.addEventListener("click", (e) => startEdit(e, item.dataset.codeId));
+});
+
+//수정 이모티콘을 눌렀을때
+const startEdit = (e, docId) => {
+  console.log(e.target);
+  if (e.target.classList.contains("edit-btn")) {
+    const guestCommentDiv = e.target.closest(".guest-comment"); // 부모 요소를 찾습니다.
+
+    // 수정 중 잠시 edit, 삭제 아이콘 없앰
+    e.target.style.display = "none";
+    guestCommentDiv.querySelector(".delete-btn").style.display = "none";
+
+    // 삭제된 이미지 자리에 버튼 요소를 생성
+    const confirm_btn = document.createElement("button");
+    const cancel_btn = document.createElement("button");
+    confirm_btn.textContent = "확인"; // 원하는 버튼 텍스트 추가
+    confirm_btn.classList = "ok-edit";
+    cancel_btn.textContent = "취소";
+    cancel_btn.classList = "cancel-edit";
+    // 버튼에 클릭 이벤트 리스너 추가 등 원하는 작업 수행
+
+    // 삭제된 이미지 자리에 수정확인, 수정취소버튼을 삽입
+    if (guestCommentDiv) {
+      guestCommentDiv.insertBefore(
+        confirm_btn,
+        guestCommentDiv.querySelector(".edit-btn")
+      );
+      guestCommentDiv.insertBefore(
+        cancel_btn,
+        guestCommentDiv.querySelector(".edit-btn")
+      );
+    }
+
+    //수정 textarea 생성
+    let newText = e.target.closest(".guest-comment").querySelector(".comment");
+    const newTextArea = document.createElement("textarea");
+    newTextArea.textContent = newText.innerHTML;
+    newText.style.display = "none";
+    newTextArea.classList = "edit-textarea";
+    e.target.closest(".guest-comment").appendChild(newTextArea);
+
+    //수정 취소 버튼을 눌렀을 때
+    cancel_btn.addEventListener("click", () => {
+      cancel_btn.style.display = "none";
+      confirm_btn.style.display = "none";
+      e.target.style.display = "flex";
+      guestCommentDiv.querySelector(".delete-btn").style.display = "flex";
+      newTextArea.remove();
+      newText.style.display = "flex";
+    });
+
+    //수정 확인 버튼 눌렀을 때
+    confirm_btn.addEventListener("click", async () => {
+      e.preventDefault();
+      //수정값을 서버로 보냄
+      console.log(docId);
+      const updateRef = doc(db, `${queryString}-guest-book`, docId);
+      await updateDoc(updateRef, {
+        comment: newTextArea.value,
+      });
+      await window.location.reload();
+    });
+  }
+};
 
 // dark-mode
 document.getElementById("dark-mode").addEventListener("click", function () {
