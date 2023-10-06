@@ -49,7 +49,7 @@ reset.addEventListener('click', function(event) {
   let Confirmed = confirm('초기화하시겠습니까?');
 
   if (Confirmed){
-    document.getElementByI('reset');
+    document.getElementById('reset');
 } else {
     event.preventDefault();
   }});
