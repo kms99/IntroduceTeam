@@ -8,9 +8,14 @@
 }
 
 body {
+  height: 200%;
   font-family: "Single Day", sans-serif;
 }
 
+#container {
+  width: 100%;
+  height: 100%;
+}
 .header-top {
   position: fixed;
   width: 100%;
@@ -333,4 +338,163 @@ section > button:nth-of-type(3) {
 }
 .flip:hover .card {
   transform: rotateY(180deg);
+}
+
+/* 반응형구현 */
+@media (max-width: 1280px) {
+  .profile {
+    width: 500px;
+    height: 500px;
+  }
+
+  .card-area .card-list-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile {
+    width: 400px;
+    height: 400px;
+  }
+  .team-intro {
+    width: 95%;
+  }
+
+  ul > h2 {
+    font-size: 25px;
+  }
+  ul > li {
+    font-size: 18px;
+  }
+
+  .header-title {
+    flex: 1.2;
+  }
+
+  .postbox {
+    width: 750px;
+  }
+}
+
+@media (max-width: 820px) {
+  #container {
+    flex-direction: column-reverse;
+  }
+
+  .header-title > h1 {
+    font-size: 45px;
+  }
+
+  .header-login,
+  .check-dust {
+    padding: 0;
+    font-size: 12px;
+  }
+  .header-top {
+    padding: 15px 30px;
+  }
+  .profile {
+    width: 200px;
+    height: 200px;
+  }
+
+  #images {
+    width: 71px;
+  }
+  #MBTI,
+  #blog,
+  #git {
+    width: 20%;
+  }
+  .endBtn {
+    justify-content: center;
+    gap: 15px;
+  }
+  #reset {
+    margin: 0;
+  }
+  ul > li {
+    font-size: 13px;
+  }
+  .card-area .card-list-container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-top {
+    padding: 5px 10px;
+  }
+  .header-title > h1 {
+    font-size: 20px;
+  }
+  #lightMode_btn,
+  #darkMode_btn {
+    width: 18px;
+    height: 15px;
+  }
+  .header-buttons > button {
+    padding: 0;
+  }
+  .header-login {
+    margin-right: 10px;
+  }
+  .header-login,
+  .check-dust {
+    padding: 0;
+    font-size: 10px;
+  }
+  .header-greeting {
+    padding: 40px 0 0 0;
+    font-size: 10px;
+  }
+
+  .header-imgs {
+    flex: 1;
+  }
+  .header-title {
+    flex: 1;
+  }
+  .header-buttons {
+    flex: 1;
+  }
+  .content-container {
+    margin-left: 0;
+    width: 100%;
+  }
+  ul {
+    padding: 5px;
+  }
+  .postbox {
+    width: 250px;
+  }
+
+  #name,
+  #living,
+  #MBTI,
+  #blog,
+  #git {
+    width: 100%;
+  }
+
+  .UPbox1 {
+    flex-direction: column;
+  }
+  .card-area .card-list-container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .endBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+  #reset {
+    margin: 0;
+  }
 }
