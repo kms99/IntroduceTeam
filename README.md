@@ -53,5 +53,11 @@
 - 민규 : 첫 프로젝트라 말만 많고 의욕만 앞선거에 비해 할줄 아는게 많이 없어서 팀원들에게 죄송했고, 개인적으로 많이 부족하다는걸 깨달아서 한편으로는 자극받고 좋았습니다.
 - 병택 : 비전공자 + 제로베이스라 시작부터 막막했는데 좋은 팀원 분들을 만나서 어려움 없이 즐겁게 프로젝트를 끝낼 수 있었습니다.
 
+## 불4조
+
+| 시병택 | 김진현 | 천민규 | 김명섭 |
+|:--------:|:--------:|:--------:|:--------:|
+| <img src="https://github.com/jinhyeon0810/todayHealth_ts/assets/121710757/c80e1d72-b0c8-4e9d-ad1c-badc7f45165a" width="500px" height="300px" /> | <img src="https://github.com/jinhyeon0810/todayHealth_ts/assets/121710757/ee11e307-0116-4f03-bd20-d457067efb36" width="500px" height="300px"/> | <img src="https://github.com/jinhyeon0810/todayHealth_ts/assets/121710757/3288b2db-892e-4ad6-a544-48c9a80af476" width="500px" height="300px"/> | <img src="https://github.com/jinhyeon0810/todayHealth_ts/assets/121710757/742927ec-be86-4ac7-bea3-a1be8e5df3c1" width="500px" height="300px"/>    |
+| [byeong-taek](https://github.com/byeongtaek2023) | [jin-hyeon](https://github.com/jinhyeon0810) | [min-gyu](https://github.com/gyugod93) | [myeong-sub](https://github.com/kms99) |
 
 
