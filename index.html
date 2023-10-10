@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -51,10 +52,7 @@
           <ul>
             <h1>'불4조'</h1>
             <h2>1. 팀명의 의미</h2>
-            <li>
-              4조로 배정되었기도 하고, 불사조처럼 부트캠프 끝까지 죽지않고
-              불타오르며 달려나가기 위해 작명하였다
-            </li>
+            <li>4조로 배정되었기도 하고, 불사조처럼 부트캠프 끝까지 죽지않고 불타오르며 달려나가기 위해 작명하였다</li>
           </ul>
           <ul>
             <h2>2. 팀 구성원</h2>
@@ -64,16 +62,12 @@
           <ul>
             <h2>3. 팀의 궁극적 목표</h2>
             <li>1. 매니저님들이 봐도 감탄할만한 결과물 만들기</li>
-            <li>
-              2. 주니어 개발자가 되기 위한 첫 프로젝트 성공적으로 완성하기
-            </li>
+            <li>2. 주니어 개발자가 되기 위한 첫 프로젝트 성공적으로 완성하기</li>
           </ul>
 
           <ul>
             <h2>4. 팀에 대한 약속</h2>
-            <li>
-              잠수 금지, 코드 리뷰 준비하기, 코드 주석 잘 달기, 상호 존중하기
-            </li>
+            <li>잠수 금지, 코드 리뷰 준비하기, 코드 주석 잘 달기, 상호 존중하기</li>
           </ul>
 
           <ul>
@@ -91,10 +85,7 @@
           </ul>
         </section>
         <section class="img-container">
-          <img
-            class="profile"
-            src="https://drive.google.com/uc?id=1T6oQ6r0q6YFpUKdwBQXi4q5c6pbt4OFQ"
-          />
+          <img class="profile" src="https://drive.google.com/uc?id=1T6oQ6r0q6YFpUKdwBQXi4q5c6pbt4OFQ" />
         </section>
       </div>
     </article>
@@ -119,101 +110,36 @@
               <input type="text" id="living" placeholder="거주지" />
             </div>
             <div class="UPbox1">
-              MBTI: <input type="text" id="MBTI" placeholder="MBTI" /> 블로그:
-              <input type="text" id="blog" placeholder="블로그" /> 깃허브:
+              MBTI: <input type="text" id="MBTI" placeholder="MBTI" /> 블로그: <input type="text" id="blog" placeholder="블로그" /> 깃허브:
               <input type="text" id="git" placeholder="깃허브" />
             </div>
             <div class="mid4">
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >직무 턴 계기</label
-                >
-                <textarea
-                  class="form-control"
-                  id="turn"
-                  rows="6"
-                  placeholder="직무 턴 계기"
-                ></textarea>
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >취업목표</label
-                >
-                <textarea
-                  class="form-control"
-                  id="goal"
-                  rows="6"
-                  placeholder="취업목표"
-                ></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">직무 턴 계기</label>
+                <textarea class="form-control" id="turn" rows="6" placeholder="직무 턴 계기"></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">취업목표</label>
+                <textarea class="form-control" id="goal" rows="6" placeholder="취업목표"></textarea>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >첫 월급 받으면 하고 싶은 것</label
-                >
-                <textarea
-                  class="form-control"
-                  id="firstSalary"
-                  rows="6"
-                  placeholder="첫 월급 받으면 하고 싶은 것"
-                ></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">첫 월급 받으면 하고 싶은 것</label>
+                <textarea class="form-control" id="firstSalary" rows="6" placeholder="첫 월급 받으면 하고 싶은 것"></textarea>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >객관적으로 살펴본 자신의 장점</label
-                >
-                <textarea
-                  class="form-control"
-                  id="Advantages"
-                  rows="6"
-                  placeholder="객관적으로 살펴본 자신의 장점"
-                ></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">객관적으로 살펴본 자신의 장점</label>
+                <textarea class="form-control" id="Advantages" rows="6" placeholder="객관적으로 살펴본 자신의 장점"></textarea>
               </div>
               <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label"
-                  >자신의 협업 스타일 소개</label
-                >
-                <textarea
-                  class="form-control"
-                  id="collabo"
-                  rows="6"
-                  placeholder="자신의 협업 스타일 소개"
-                ></textarea>
+                <label for="exampleFormControlTextarea1" class="form-label">자신의 협업 스타일 소개</label>
+                <textarea class="form-control" id="collabo" rows="6" placeholder="자신의 협업 스타일 소개"></textarea>
               </div>
             </div>
             <section class="endBtn">
-              <button
-                type="button"
-                class="btn btn-outline-danger"
-                id="posting-btn"
-              >
-                확인
-              </button>
-              <button
-                type="button"
-                class="btn btn-outline-danger closeButton"
-                id="closeButton"
-              >
-                닫기
-              </button>
-              <button
-                type="reset"
-                class="btn btn-outline-danger"
-                value="Reset"
-                id="reset"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-arrow-clockwise"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
-                  />
-                  <path
-                    d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
-                  />
+              <button type="button" class="btn btn-outline-danger" id="posting-btn">확인</button>
+              <button type="button" class="btn btn-outline-danger closeButton" id="closeButton">닫기</button>
+              <button type="reset" class="btn btn-outline-danger" value="Reset" id="reset">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
                 </svg>
               </button>
             </section>
