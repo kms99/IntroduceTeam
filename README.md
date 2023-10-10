@@ -1,6 +1,6 @@
 # IntroduceTeam
 <div align='center'><h2><a href="https://www.youtube.com/watch?v=iDYu2VrCZTU&feature=youtu.be">시연 영상</a></h2></div>
-<div align="center"><h2><a href="https://www.notion.so/B-4-4-S-A-fd999045b26240d28654940c9c935783">프로젝트 노션</a></h2></div>
+<div align="center"><h2><a href="https://www.notion.so/4-59d7cc50d7d34d18aff4228d1a2dd5b3">프로젝트 노션</a></h2></div>
 <div align="center"><h2><a href="https://introduce-team.vercel.app/">Demo</a></h2></div>
 
 # 프로젝트 소개
